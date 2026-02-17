@@ -53,6 +53,26 @@ public class WarehouseSystem {
         sc.close();
     }
 
+    void searchProduct(Scanner sc) {
+        System.out.print("Enter product name to search: ");
+        String searchName = sc.nextLine();
+
+        boolean found = false;
+
+        for (int i = 0; i < count; i++) {
+            if (products[i].name.equalsIgnoreCase(searchName)) {
+                products[i].display();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Product not found.");
+        }
+    }
+
+
     static void addProduct(Scanner sc) {
         System.out.print("Enter product name: ");
         String name = sc.nextLine();
